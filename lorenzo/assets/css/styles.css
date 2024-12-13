@@ -1,0 +1,173 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+}
+
+.nav{
+    background-color: #ff0000;
+    color: azure;
+
+    --img1: scale(1);
+    --img2: scale(0);
+}
+
+.nav:has( .dropdown:target){
+    --img1: scale(0);
+    --img2: scale(1);
+
+    --clip: inset(0 0 0 0);
+    transition: 0.5s;
+}
+
+.nav_container{
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "title img";
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav_title{
+    grid-area: title;
+}
+
+.nav_menu{
+    grid-area: img;
+    position: relative;
+    z-index: 21;
+
+    transform: var(--img1);
+}
+
+.nav_menu--second{
+    transform: var(--img2);
+}
+
+.nav_icon{
+    width: 30px;
+    display: block;
+}
+
+.dropdown{
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    width: 75%;
+    max-width: 300px;
+    right: 0;
+    top: 0;
+    bottom: 25vh;
+    padding: 4em;
+    padding-top: 8em;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+
+    overflow-y: auto;
+
+    clip-path: var(--clip,inset(0 0 100% 100%));
+    transition: .5s;
+}
+
+.dropdown_list{
+    list-style: none;
+    padding: 10px;
+    outline: none;
+    text-decoration: none;
+
+    padding-bottom: 2em;
+
+}
+
+.dropdown_list:hover{
+    background-color: gray;
+    border-radius: 10px;
+}
+
+
+.dropdown_link{
+    color: #FFF;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.dropdown_span{
+    color: #FFF;
+    text-decoration: none;
+    outline: none;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(204, 17, 17, 0.774);
+    height: 100px;
+    display: none;
+}
+
+header img{
+    width: 100px;
+    height: auto;
+}
+
+header ul{
+    display: flex;
+    align-items:center
+}
+
+header li{
+    padding-right: 20px;
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    outline: none;
+    color: #ff0000;
+}
+
+.inicio{
+    position:relative;
+    display: flex;
+    flex-direction:column-reverse;
+    justify-content:center;
+    align-items: center;
+    
+
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(157,2,255,1) 100%);        width: 100vw;
+    height: 50vh;
+    z-index: -4;
+
+}
+
+
+.inicio .izq{
+    text-align: center;
+    width: 80%;
+    padding-bottom: 5vw;
+    font-size: 10px;
+}
+
+.inicio .der{
+    padding: 5vw;
+}
+
+.whatsapp{
+    position: fixed;
+    top: 60%;
+    left: 85%;
+}
